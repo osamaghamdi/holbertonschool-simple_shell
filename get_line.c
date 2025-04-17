@@ -1,27 +1,40 @@
 #include "shell.h"
 
 /**
- * get_line - Reads a line of input from stdin.
+ * parse_line - splits a line into tokens (arguments)
+ * @line: the input line
  *
- * Return: A pointer to the buffer containing the input string,
- * or NULL if an error occurs or EOF is reached.
+ * Return: array of strings (tokens)
  */
-char *get_line(void)
+char **parse_line(char *line)
 {
-    char *buffer;
-    size_t buffer_size;
+int bufsize = 64, i = 0;
+char **tokens = malloc(bufsize * sizeof(char *));
+char *token;
 
-    buffer = NULL;
-    printf("($)");
+if (!tokens)
+{
+perror("malloc");
+exit(EXIT_FAILURE);
+}
 
-    if (getline(&buffer, &buffer_size, stdin) == -1)
-    {
-        buffer = NULL;
-        if (feof(stdin))
-            printf("[EOF]");
-        else
-            printf("Get line failed");
-    }
-
-    return (buffer);
+token = strtok(line, " \n\t");
+while (token)
+{
+tokens[i++] = token;
+if (i >= bufsize)
+{
+bufsize += 64;
+tokens = realloc(tokens, bufsize *sizeof(char *));
+if (!tokens)
+{
+perror("realloc");
+exit(EXIT_FAILURE);
+}
+}
+token = strtok(NULL, " \n\t");
+}
+tokens[i] = NULL;
+return (tokens);
+free(tokens);
 }
