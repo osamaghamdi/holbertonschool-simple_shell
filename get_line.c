@@ -20,5 +20,5 @@ printf("Get line failed");
 
 }
 
-  return ( buffer );
+	return (buffer);
 }
