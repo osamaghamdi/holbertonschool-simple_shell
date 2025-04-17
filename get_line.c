@@ -20,7 +20,7 @@ char *get_line(void)
 		if (feof(stdin))
 			printf("[EOF]");
 		else
-			printf("Get line failed");
+			return (buffer);
 	}
 
 	return (buffer);
