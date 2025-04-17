@@ -4,7 +4,7 @@
  * get_line - Reads a line of input from stdin.
  *
  * Return: A pointer to the buffer containing the input string,
- * or NULL if an error occurs or EOF is reached.
+ *         or NULL if an error occurs or EOF is reached.
  */
 char *get_line(void)
 {
@@ -20,7 +20,7 @@ char *get_line(void)
 		if (feof(stdin))
 			printf("[EOF]");
 		else
-			return (buffer);
+			printf("Get line failed");
 	}
 
 	return (buffer);
