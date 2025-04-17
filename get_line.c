@@ -17,8 +17,6 @@
  printf("[EOF]");
  else
  printf("Get line failed");
- 
- }
- 
  return (buffer);
+ }
  }
