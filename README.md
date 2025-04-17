@@ -1,1 +1,1 @@
-hi riyadh please review the repo and this what i got until now and try run the code from 
+hi riyadh please review the repo and this what i got until now and try run the code from a.out
