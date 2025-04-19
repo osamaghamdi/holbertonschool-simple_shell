@@ -95,7 +95,7 @@ char *read_input(void)
 
     /* Remove newline character */
     input[nread - 1] = '\0';
-    return input;
+    return (input);
 }
 
 /**
@@ -126,5 +126,5 @@ size_t _strlen(const char *s)
     while (*s++)
         length++;
 
-    return length;
+    return (length);
 }
