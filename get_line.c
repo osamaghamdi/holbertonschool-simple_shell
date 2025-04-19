@@ -12,7 +12,7 @@ char *get_line(void)
     size_t buffer_size;
 
     buffer = NULL;
-    printf("($)");
+    printf("($) ");
 
     if (getline(&buffer, &buffer_size, stdin) == -1)
     {
@@ -20,11 +20,8 @@ char *get_line(void)
         if (feof(stdin))
             printf("[EOF]");
         else
-        {
             printf("Get line failed");
-    
-        }
     }
-    /* Return buffer, even if it's NULL*/
+
     return (buffer);
 }
