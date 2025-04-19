@@ -20,9 +20,11 @@ char *get_line(void)
         if (feof(stdin))
             printf("[EOF]");
         else
+        {
             printf("Get line failed");
+    
+        }
     }
-
     /* Return buffer, even if it's NULL*/
     return (buffer);
 }
