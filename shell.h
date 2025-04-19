@@ -3,9 +3,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/wait.h>
+#include <string.h>
 #include <unistd.h>
 
-char *get_line(void);
+char *read_line(void);
+char **parse_line(char *line);
 
 #endif
