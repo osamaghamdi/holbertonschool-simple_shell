@@ -18,6 +18,7 @@
 #define MAX_INPUT_SIZE 1024
 
 /* Function Prototypes */
+char *custom_getline(void);
 void execute_command(char *cmd);
 char *read_input(void);
 void _strdup(char *str);
