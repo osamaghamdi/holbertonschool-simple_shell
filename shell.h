@@ -3,10 +3,15 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <unistd.h>
+#include <string.h>
+#include <sys/wait.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 
-char *read_line(void);
-char **parse_line(char *line);
+char *_strdup(const char *str);
+size_t _strlen(const char *s);
+void execute_command(char *command);
+void shell_loop(void);
 
 #endif
