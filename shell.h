@@ -11,13 +11,16 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
-#include <sys/wait.h>
 #include <sys/types.h>
+#include <sys/wait.h>
 #include <sys/stat.h>
 
-char *_strdup(const char *str);
+#define MAX_INPUT_SIZE 1024
+
+/* Function Prototypes */
+void execute_command(char *cmd);
+char *read_input(void);
+void _strdup(char *str);
 size_t _strlen(const char *s);
-void execute_command(char *command);
-void shell_loop(void);
 
 #endif /* SHELL_H */
