@@ -1,27 +1,22 @@
 #include "shell.h"
 
-/**
- * get_line - Reads a line of input from stdin.
- *
- * Return: A pointer to the buffer containing the input string,
- * or NULL if an error occurs or EOF is reached.
+/*
+ * File: get_line.c
+ * Description: Contains a custom implementation of the getline function.
  */
-char *get_line(void)
+
+char *custom_getline(void)
 {
-    char *buffer;
-    size_t buffer_size;
+	ssize_t read;
+	size_t len = 0;
+	char *line = NULL;
 
-    buffer = NULL;
-    printf("($) ");
+	read = getline(&line, &len, stdin);
+	if (read == -1)
+	{
+		free(line);
+		return (NULL);
+	}
 
-    if (getline(&buffer, &buffer_size, stdin) == -1)
-    {
-        buffer = NULL;
-        if (feof(stdin))
-            printf("[EOF]");
-        else
-            printf("Get line failed");
-    }
-
-    return (buffer);
+	return (line);
 }
